@@ -65,7 +65,7 @@
         <div class="card mb-4 border-0 shadow-sm">
           <div class="row g-0">
             <div class="col-md-3">
-              <img src="../assets/image/dokuemntasi-2.png" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Team">
+              <img src="../assets/image/dokumentasi-2.png" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Team">
             </div>
             <div class="col-md-9">
               <div class="card-body p-4">
@@ -89,7 +89,7 @@
         <div class="card mb-4 border-0 shadow-sm">
           <div class="row g-0">
             <div class="col-md-3">
-              <img src="../assets/image/dokuemntasi-3.png" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Education">
+              <img src="@/assets/image/dokumentasi-3.png" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="Education">
             </div>
             <div class="col-md-9">
               <div class="card-body p-4">

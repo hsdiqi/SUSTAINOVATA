@@ -24,7 +24,7 @@
           <!-- Publication Card 1 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm" style="background-color: #f8ffe7">
-              <img src="../assets/image/pertanian-pintar.png" class="card-img-top" alt="Drone Farming Research">
+              <img src="@/assets/image/pertanian-pintar.png" class="card-img-top" alt="Drone Farming Research">
               <div class="card-body">
                 <h5 class="card-title fw-bold">Title</h5>
                 <p class="text-muted small mb-2">Name Writer</p>
@@ -43,7 +43,7 @@
           <!-- Publication Card 2 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm" style="background-color: #f8ffe7">
-              <img src="../assets/image/mesin-1.png" class="card-img-top" alt="Laboratory Equipment">
+              <img src="@/assets/image/mesin-1.png" class="card-img-top" alt="Laboratory Equipment">
               <div class="card-body">
                 <h5 class="card-title fw-bold">Title</h5>
                 <p class="text-muted small mb-2">Name Writer</p>
@@ -62,7 +62,7 @@
           <!-- Publication Card 3 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm" style="background-color: #f8ffe7">
-              <img src="../assets/image/proses kopi.png" class="card-img-top" alt="Laboratory Research">
+              <img src="@/assets/image/proses kopi.png" class="card-img-top" alt="Laboratory Research">
               <div class="card-body">
                 <h5 class="card-title fw-bold">Title</h5>
                 <p class="text-muted small mb-2">Name Writer</p>
@@ -81,7 +81,7 @@
           <!-- Publication Card 4 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm" style="background-color: #f8ffe7">
-              <img src="../assets/image/produk-1.png" class="card-img-top" alt="Petri Dishes">
+              <img src="@/assets/image/produk-1.png" class="card-img-top" alt="Petri Dishes">
               <div class="card-body">
                 <h5 class="card-title fw-bold">Title</h5>
                 <p class="text-muted small mb-2">Name Writer</p>
@@ -114,7 +114,7 @@
           <!-- Publication Card 5 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm" style="background-color: #f8ffe7">
-              <img src="../assets/image/poduk-kopi.png" class="card-img-top" alt="Seed Jars">
+              <img src="@/assets/image/poduk-kopi.png" class="card-img-top" alt="Seed Jars">
               <div class="card-body">
                 <h5 class="card-title fw-bold">Title</h5>
                 <p class="text-muted small mb-2">Name Writer</p>
@@ -133,7 +133,7 @@
           <!-- Publication Card 6 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm" style="background-color: #f8ffe7">
-              <img src="../assets/image/tumbuhan-kopi.png" class="card-img-top" alt="Plant Research">
+              <img src="@/assets/image/tumbuhan-kopi.png" class="card-img-top" alt="Plant Research">
               <div class="card-body">
                 <h5 class="card-title fw-bold">Title</h5>
                 <p class="text-muted small mb-2">Name Writer</p>
@@ -152,7 +152,7 @@
           <!-- Publication Card 7 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm" style="background-color: #f8ffe7">
-              <img src="../assets/image/mesin-kopi2.png" class="card-img-top" alt="Temperature Monitor">
+              <img src="@/assets/image/mesin-kopi2.png" class="card-img-top" alt="Temperature Monitor">
               <div class="card-body">
                 <h5 class="card-title fw-bold">Title</h5>
                 <p class="text-muted small mb-2">Name Writer</p>
@@ -171,7 +171,7 @@
           <!-- Publication Card 8 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm" style="background-color: #f8ffe7">
-              <img src="../assets/image/aset2.png" class="card-img-top" alt="Researchers">
+              <img src="@/assets/image/aset2.png" class="card-img-top" alt="Researchers">
               <div class="card-body">
                 <h5 class="card-title fw-bold">Title</h5>
                 <p class="text-muted small mb-2">Name Writer</p>

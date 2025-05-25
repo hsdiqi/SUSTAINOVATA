@@ -27,7 +27,7 @@
         
         <div class="row g-4">
           <div class="col-md-5">
-            <img src="../assets/image/pertanian-pintar.png" alt="Sistem Pertanian Pintar" class="img-fluid rounded shadow-sm">
+            <img src="@/assets/image/pertanian-pintar.png" alt="Sistem Pertanian Pintar" class="img-fluid rounded shadow-sm">
           </div>
           <div class="col-md-7">
             <h2 class="text-success mb-3">Sistem Pertanian Pintar</h2>
@@ -61,7 +61,7 @@
             <div class="card h-100 border-0 shadow-sm">
               <div class="row g-0">
                 <div class="col-md-5">
-                  <img src="../assets/image/poduk-kopi.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Seed Research">
+                  <img src="@/assets/image/poduk-kopi.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Seed Research">
                 </div>
                 <div class="col-md-7">
                   <div class="card-body">
@@ -83,7 +83,7 @@
             <div class="card h-100 border-0 shadow-sm">
               <div class="row g-0">
                 <div class="col-md-5">
-                  <img src="../assets/image/mesin-1.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Laboratory Equipment">
+                  <img src="@/assets/image/mesin-1.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Laboratory Equipment">
                 </div>
                 <div class="col-md-7">
                   <div class="card-body">
@@ -135,7 +135,6 @@
       </div>
     </section>
     
-    <Footer />
   </div>
 </template>
 
@@ -145,7 +144,7 @@
 
 <style scoped>
 .hero-section {
-  background-image: url('../assets/image/bg-research-center.png');
+  background-image: url('@images/bg-research-center.png');
   background-size: cover;
   background-position: center;
   position: relative;

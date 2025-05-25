@@ -1,12 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
-      <!-- Logo -->
       <a class="navbar-brand" href="#">
-        <img src="@/assets/logo/Logo.png" alt="Logo" height="50">
+        <img src="@logo" alt="Logo" height="50">
       </a>
       
-      <!-- Hamburger button for mobile -->
       <button 
         class="navbar-toggler" 
         type="button" 
@@ -19,22 +17,42 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       
-      <!-- Navigation items -->
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav ms-auto mb-0 mb-lg-0">
-          <li v-for="(item, index) in navItems" :key="index" class="nav-item d-flex align-items-center justify-content-center">
+          <li v-for="(item, index) in mainNavItems" :key="index" class="nav-item">
             <router-link class="nav-link" :to="item.path" active-class="active">
               {{ item.name }}
             </router-link>
           </li>
+          
+          <li class="nav-item dropdown">
+            <a 
+              class="nav-link dropdown-toggle" 
+              href="#" 
+              id="moreDropdown" 
+              role="button" 
+              data-bs-toggle="dropdown" 
+              aria-expanded="false"
+            >
+              Lainnya
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+              <li v-for="(item, index) in dropdownItems" :key="index">
+                <router-link class="dropdown-item" :to="item.path">
+                  {{ item.name }}
+                </router-link>
+              </li>
+            </ul>
+          </li>
+          
           <li class="nav-item ms-2 position-relative">
             <PopupOverlay 
               :is-logged-in="isLoggedIn" 
               :user="user"
               @login="handleLogin"
               @register="handleRegister"
-              @dashboard="handleDashboard"
               @logout="handleLogout"
+              @dashboard="handleDashboard"
             />
           </li>
         </ul>
@@ -54,14 +72,18 @@ const router = useRouter();
 const isLoggedIn = ref(false);
 const user = ref({});
 
-// Navigation items
-const navItems = [
+// Main navigation items (yang paling penting)
+const mainNavItems = [
   { name: 'Beranda', path: '/' },
   { name: 'Tentang Kami', path: '/about' },
   { name: 'Program & Inovasi', path: '/programs' },
+  { name: 'Berita', path: '/news' }
+];
+
+// Items untuk dropdown "Lainnya"
+const dropdownItems = [
   { name: 'Publikasi Ilmiah', path: '/publications' },
   { name: 'Pusat Riset', path: '/research' },
-  { name: 'Berita', path: '/news' },
   { name: 'Kemitraan', path: '/kemitraan' },
   { name: 'Kontak', path: '/contact' }
 ];
@@ -73,8 +95,8 @@ onMounted(() => {
   if (token) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     isLoggedIn.value = true;
-    console.log('Token found:', token);
-    console.log('User found:', userData);
+    // console.log('Token found:', token);
+    // console.log('User found:', userData);
     user.value = userData;
   } else {
     console.log('No token found');
@@ -84,26 +106,26 @@ onMounted(() => {
 // Methods
 const handleLogin = () => {
   router.push('/login');
-  // console.log('Login clicked');
+//   console.log('Login clicked');
 };
 
 const handleRegister = () => {
   router.push('/register');
-  // console.log('Register clicked');
+//   console.log('Register clicked');
 };
 
 const handleLogout = () => {
-  console.log('Logout clicked');
+//   console.log('Logout clicked');
   logout();
   isLoggedIn.value = false;
   user.value = {};
 };
 
 const handleDashboard = () => {
-  if (user.value.role === 'admin') {
+  if (user.value.role === 'admin'|| user.value.role === 'dev') {
     router.push('/admin/dashboard');
   } else {
-    router.push('/dashboard');
+    alert('Anda bukan admin mapun developer');
   }
 };
 </script>
@@ -120,13 +142,31 @@ const handleDashboard = () => {
   transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover,
+.dropdown-item:hover {
   color: #4CAF50;
 }
 
 .navbar-nav .nav-link.active {
   color: #4CAF50;
   font-weight: 600;
+}
+
+.dropdown-menu {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  color: #000;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #4CAF50;
 }
 
 /* For proper spacing between nav items */
@@ -146,6 +186,15 @@ const handleDashboard = () => {
     width: 100%;
     text-align: center;
     padding: 0.5rem 0;
+  }
+  
+  .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    border: none;
+    box-shadow: none;
+    background-color: #f8f9fa;
+    margin-top: 0.5rem;
   }
 }
 </style>

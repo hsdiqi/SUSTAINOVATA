@@ -31,7 +31,7 @@
                 >Aktif</span
               >
               <img
-                src="../assets/image/pertanian-pintar.png"
+                src="@/assets/image/pertanian-pintar.png"
                 class="card-img-top"
                 alt="Sistem Pertanian Pintar"
               />
@@ -68,7 +68,7 @@
                 >Tahap Penelitian</span
               >
               <img
-                src="../assets/image/limbah.png"
+                src="@/assets/image/limbah.png"
                 class="card-img-top"
                 alt="Biokonversi Limbah Organik"
               />
@@ -105,7 +105,7 @@
                 >Tahap Pengujian</span
               >
               <img
-                src="../assets/image/iklim.png"
+                src="@/assets/image/iklim.png"
                 class="card-img-top"
                 alt="Perkiraan Iklim untuk Pertanian"
               />
@@ -143,7 +143,7 @@
                 >Aktif</span
               >
               <img
-                src="../assets/image/pertanian-pintar.png"
+                src="@/assets/image/pertanian-pintar.png"
                 class="card-img-top"
                 alt="Sistem Pertanian Pintar"
               />
@@ -195,7 +195,7 @@
                 >Tahap Penelitian</span
               >
               <img
-                src="../assets/image/pertanian-pintar.png"
+                src="@/assets/image/pertanian-pintar.png"
                 class="card-img-top"
                 alt="Sistem Pertanian Pintar"
               />
@@ -232,7 +232,7 @@
                 >Aktif</span
               >
               <img
-                src="../assets/image/limbah.png"
+                src="@/assets/image/limbah.png"
                 class="card-img-top"
                 alt="Biokonversi Limbah Organik"
               />
@@ -269,7 +269,7 @@
                 >Tahap Pengujian</span
               >
               <img
-                src="../assets/image/iklim.png"
+                src="@/assets/image/iklim.png"
                 class="card-img-top"
                 alt="Perkiraan Iklim untuk Pertanian"
               />
@@ -307,7 +307,7 @@
                 >Aktif</span
               >
               <img
-                src="../assets/image/pertanian-pintar.png"
+                src="@/assets/image/pertanian-pintar.png"
                 class="card-img-top"
                 alt="Sistem Pertanian Pintar"
               />

@@ -61,7 +61,7 @@ exports.loginUser = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("Error saat login:", error);
+    // console.error("Error saat login:", error);
     res.status(500).json({
       success: false,
       message: "Terjadi kesalahan saat login",
@@ -119,7 +119,7 @@ exports.registerUser = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("Error saat registrasi:", error);
+    // console.error("Error saat registrasi:", error);
     res.status(500).json({
       success: false,
       message: "Terjadi kesalahan server",

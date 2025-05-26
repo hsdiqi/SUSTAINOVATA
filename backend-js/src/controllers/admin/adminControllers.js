@@ -35,7 +35,7 @@ exports.dashboard = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error("Error in dashboard:", error);
+    // console.error("Error in dashboard:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -51,11 +51,11 @@ exports.getAllPrograms = async (req, res) => {
         res.status(200).json(results);
       })
       .catch((error) => {
-        console.error("Error fetching programs:", error);
+        // console.error("Error fetching programs:", error);
         res.status(500).json({ message: "Internal server error" });
       });
   } catch (error) {
-    console.error("Error fetching programs:", error);
+    // console.error("Error fetching programs:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -73,7 +73,7 @@ exports.deleteProgram = async (req, res) => {
       fs.unlink(filePath, async (err) => {
         if (err) {
           res.status(500).json({ message: "Error deleting file" });
-          console.error("Error deleting file:", err);
+          // console.error("Error deleting file:", err);
         }
         const deleteResult = await queryAsync(
           "DELETE FROM programs WHERE ID_program = ?",
@@ -88,7 +88,7 @@ exports.deleteProgram = async (req, res) => {
       res.status(404).json({ message: "Program not found" });
     }
   } catch (error) {
-    console.error("Error deleting program:", error);
+    // console.error("Error deleting program:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 }
@@ -128,7 +128,7 @@ exports.editProgram = async (req, res) => {
     await queryAsync(`UPDATE programs SET ${fields} WHERE ID_program = ?`, values);
     res.status(200).json({ message: "Program berhasil diupdate" });
   } catch (error) {
-    console.error("Error updating program:", error);
+    // console.error("Error updating program:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 }
@@ -144,11 +144,11 @@ exports.getAllJurnal = async (req, res) => {
         res.status(200).json(results);
       })
       .catch((error) => {
-        console.error("Error fetching journals:", error);
+        // console.error("Error fetching journals:", error);
         res.status(500).json({ message: "Internal server error" });
       });
   } catch (error) {
-    console.error("Error fetching journals:", error);
+    // console.error("Error fetching journals:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -161,20 +161,20 @@ exports.deleteJurnal = async (req, res) => {
       "SELECT cover_image, file FROM jurnal WHERE ID_jurnal = ?",
       [req.params.id]
     );
-    // console.log(result);
+    // // console.log(result);
     if (result.length !== 0) {
       const coverPath = path.join(__dirname, "../../fileSaved/images/jurnal", result[0].cover_image);
       const pdfPath = path.join(__dirname, "../../fileSaved/pdf", result[0].file);
       
       fs.unlink(coverPath, (err) => {
         if (err) {
-          console.error("Error deleting cover file:", err);
+          // console.error("Error deleting cover file:", err);
         }
       });
       
       fs.unlink(pdfPath, async (err) => {
         if (err) {
-          console.error("Error deleting PDF file:", err);
+          // console.error("Error deleting PDF file:", err);
         }
         const deleteResult = await queryAsync(
           "DELETE FROM jurnal WHERE ID_jurnal = ?",
@@ -189,7 +189,7 @@ exports.deleteJurnal = async (req, res) => {
       res.status(404).json({ message: "Journal not found" });
     }
   } catch (error) {
-    console.error("Error deleting journal:", error);
+    // console.error("Error deleting journal:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 }
@@ -238,7 +238,7 @@ exports.editJurnal = async (req, res) => {
 
     res.status(200).json({ message: "Jurnal berhasil diupdate" });
   } catch (error) {
-    console.error("Error updating jurnal:", error);
+    // console.error("Error updating jurnal:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -254,11 +254,11 @@ exports.getAllBerita = async (req, res) => {
         res.status(200).json(results);
       })
       .catch((error) => {
-        console.error("Error fetching news:", error);
+        // console.error("Error fetching news:", error);
         res.status(500).json({ message: "Internal server error" });
       });
   } catch (error) {
-    console.error("Error fetching news:", error);
+    // console.error("Error fetching news:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -276,7 +276,7 @@ exports.deleteBerita = async (req, res) => {
       fs.unlink(filePath, async (err) => {
         if (err) {
           res.status(500).json({ message: "Error deleting file" });
-          console.error("Error deleting file:", err);
+          // console.error("Error deleting file:", err);
         }
         const deleteResult = await queryAsync(
           "DELETE FROM news WHERE ID_news = ?",
@@ -291,7 +291,7 @@ exports.deleteBerita = async (req, res) => {
       
     }
   } catch (error) {
-    console.error("Error deleting news:", error);
+    // console.error("Error deleting news:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -333,7 +333,7 @@ exports.editBerita = async (req, res) => {
 
     res.status(200).json({ message: "Berita berhasil diupdate" });
   } catch (error) {
-    console.error("Error updating berita:", error);
+    // console.error("Error updating berita:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };

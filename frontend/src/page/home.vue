@@ -101,77 +101,14 @@
                 </p>
 
                 <div class="row g-5">
-                    <!-- Program Card 1 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 border-0 shadow-sm" style="background-color: #F8FFE7;">
-                            <img src="../assets/image/pertanian-pintar.png" class="card-img-top"
-                                alt="Sistem Pertanian Pintar" style="padding: 20px 20px 0px 20px;">
-                            <div class="card-body text-start p-3">
-                                <h4 class="card-title mb-2">Sistem Pertanian Pintar</h4>
-                                <p class="card-text">
-                                    Pengembangan sistem pertanian vertikal terintegrasi IoT untuk optimasi produksi
-                                    pangan di lahan terbatas perkotaan.
-                                </p>
-                                <router-link to="/programs/smart-farming" class="text-decoration-none text-success">
-                                    See more <i class="bi bi-arrow-right"></i>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Program Card 2 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 border-0 shadow-sm" style="background-color: #F8FFE7;">
-                            <img src="../assets/image/limbah.png" class="card-img-top" alt="Biokonversi Limbah Organik"
-                                style="padding: 20px 20px 0px 20px;">
-                            <div class="card-body text-start p-3">
-                                <h4 class="card-title mb-2">Biokonversi Limbah Organik</h4>
-                                <p class="card-text">
-                                    Riset teknologi biokonversi untuk mengubah limbah organik menjadi pupuk dan energi
-                                    terbarukan.
-                                </p>
-                                <router-link to="/programs/waste-conversion" class="text-decoration-none text-success">
-                                    See more <i class="bi bi-arrow-right"></i>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Program Card 3 -->
-                    <div class="col-md-3">
-                        <div class="card h-100 border-0 shadow-sm" style="background-color: #F8FFE7;">
-                            <img src="../assets/image/iklim.png" class="card-img-top"
-                                alt="Perkiraan Iklim untuk Pertanian" style="padding: 20px 20px 0px 20px;">
-                            <div class="card-body text-start p-3">
-                                <h4 class="card-title mb-2">Perkiraan Iklim untuk Pertanian</h4>
-                                <p class="card-text">
-                                    Pengembangan model AI untuk analisis dan prediksi pola iklim mikro untuk
-                                    optimalisasi praktik pertanian.
-                                </p>
-                                <router-link to="/programs/climate-prediction"
-                                    class="text-decoration-none text-success">
-                                    See more <i class="bi bi-arrow-right"></i>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="col-md-3">
-                        <div class="card h-100 border-0 shadow-sm" style="background-color: #F8FFE7;">
-                            <img src="../assets/image/pertanian-pintar.png" class="card-img-top"
-                                alt="Sistem Pertanian Pintar" style="padding: 20px 20px 0px 20px;">
-                            <div class="card-body text-start p-3">
-                                <h4 class="card-title mb-2">Sistem Pertanian Pintar</h4>
-                                <p class="card-text">
-                                    Pengembangan sistem pertanian vertikal terintegrasi IoT untuk optimasi produksi
-                                    pangan di lahan terbatas perkotaan.
-                                </p>
-                                <router-link to="/programs/smart-farming" class="text-decoration-none text-success">
-                                    See more <i class="bi bi-arrow-right"></i>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
+                    <ProgramCard
+                    v-for="(program, index) in programs"
+                    :key="index"
+                    :title="program.name"
+                    :description="program.description"
+                    :image="getImages(program.poster)"
+                    :link="`/programs/${program.ID_program}`"
+                    />
                 </div>
                 <div class="mt-5">
                     <router-link to="/programs" class="btn btn-warning px-4 py-2">
@@ -184,7 +121,31 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+import ProgramCard from "./../components/cards/program-home.vue";
+
+const programs = ref([]);
+
+onMounted(() => {
+    fetchProgram();
+})
+
+const getImages = (imageName) => {
+  return `http://localhost:3000/api/images/programs/${encodeURIComponent(imageName)}`;
+}
+
+const fetchProgram = async () => {
+    try {
+        const response = await axios.get('http://localhost:3000/api/clients/home')
+        // console.log(response.data)
+        programs.value = response.data;
+    } catch (error) {
+        // console.error('Error fetching programs:', error);
+        return programs.value = [];
+    }
+}
 
 </script>
 

@@ -144,7 +144,7 @@
 
 <style scoped>
 .hero-section {
-  background-image: url('@images/bg-research-center.png');
+  background-image: url('../assets/background/bg-research-center.png'); 
   background-size: cover;
   background-position: center;
   position: relative;
